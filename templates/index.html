@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to basic AWS Panel</h1>
+    <h3>Ec2 Services</h3>
+    <ul>
+    <li><a href="/ec2/create">Create</a></li>
+    <li><a href="/ec2/public">Get Public IP</a></li>
+    <li><a href="/ec2/list">Get Running Instances</a></li>
+    <li><a href="/ec2/stop">Stop Instance</a></li>
+    <li><a href="/ec2/terminate">Terminate Instance</a></li>
+    </ul>
+    <h3>S3 services</h3>
+    <ul>
+    <li><a href="/s3/list">List</a></li>
+    <li><a href="/s3/create">Create</a></li>
+    <li><a href="/s3/delete">Delete</a></li>
+    </ul>
+</body>
+</html>
