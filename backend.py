@@ -1,6 +1,7 @@
 from flask import Flask,render_template,url_for,request,redirect
 import s3
 import ec2
+import iam
 import boto3
 
 app = Flask(__name__)
@@ -92,6 +93,39 @@ def ec2terminated():
         id=request.form["id"]
         ec2.terminate_instance(id)
         return redirect(url_for("ec2list"))
+
+#iam routes
+
+@app.route('/iam/list')
+def iamlist():
+    li=iam.list_users()
+    return render_template("iamlist.html",li=li)
+
+
+@app.route('/iam/create')
+def iamcreate():
+    return render_template("iamcreate.html")
+
+@app.route('/iam/created',methods=["POST"])
+def iamcreated():
+    if request.method == "POST":
+        name = request.form["id"]
+        print(name)
+        iam.create_user(name)
+        return redirect(url_for("iamlist"))
+
+@app.route('/iam/delete')
+def iamdelete():
+    return render_template("iamdelete.html")
+
+@app.route('/iam/deleted',methods=["POST"])
+def iamdeleted():
+    if request.method == "POST":
+        name = request.form["cname"]
+        print(name)
+        iam.delete_user(name)
+        return redirect(url_for("iamlist"))
+
 
 if __name__ == '__main__':
    app.run(debug=True,host="0.0.0.0")

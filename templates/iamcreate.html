@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>ec2terminate</title>
     <style>
         ul {
   list-style-type: none;
@@ -29,10 +29,38 @@ li a {
 li a:hover {
   background-color: #111;
 }
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
     </style>
 </head>
-
 <body>
+
     <h1>Welcome to basic AWS Panel</h1>
     <h3>Ec2 Services</h3>
     <ul>
@@ -48,12 +76,18 @@ li a:hover {
     <li><a href="/s3/delete">Delete</a></li>
     </ul>
 
-
     <h3>IAM services</h3>
     <ul>
     <li><a href="/iam/list">List</a></li>
     <li><a href="/iam/create">Create</a></li>
     <li><a href="/iam/delete">Delete</a></li>
     </ul>
+    <h3>
+    Enter IAM name </h3>
+    <form action="/iam/created" method="post" >
+        <label>Enter IAM name</label> 
+        <input type="text" name="id" id="id">
+        <input type="submit" value="submit">   
+    </form>
 </body>
 </html>

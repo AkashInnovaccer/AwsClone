@@ -18,16 +18,16 @@ def create_instance():
 
     print(instances["Instances"][0]["InstanceId"])
 
-def get_public_ip(instance_id):
-    ec2_client = boto3.client("ec2", region_name="us-east-1")
-    reservations = ec2_client.describe_instances(InstanceIds=[instance_id]).get("Reservations")
-    li=[]
-    for reservation in reservations:
-        for instance in reservation['Instances']:
-            print(instance.get("PublicIpAddress"))
-            li.append(instance.get("PublicIpAddress"))
-    print(li)
-    return li
+# def get_public_ip(instance_id):
+#     ec2_client = boto3.client("ec2", region_name="us-east-1")
+#     reservations = ec2_client.describe_instances(InstanceIds=[instance_id]).get("Reservations")
+#     li=[]
+#     for reservation in reservations:
+#         for instance in reservation['Instances']:
+#             print(instance.get("PublicIpAddress"))
+#             li.append(instance.get("PublicIpAddress"))
+#     print(li)
+#     return li
 
 def get_running_instances():
     ec2_client = boto3.client("ec2", region_name="us-east-1")
