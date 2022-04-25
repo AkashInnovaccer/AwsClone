@@ -1,7 +1,7 @@
 Aws webpage with EC2 , S3 , IAM basic operations
 ##  NOTE  Don't delete instance with public IP 3.84.118.90 and instance id i-042dc4c244c1afe25	
 For EC2
-## Don't delete khawslabuser05@nuvelabs.com this user ##
+## Don't delete khawslabuser05@nuvelabs.com IAM users ##
 Our application has both frontend and backend 
 
 #URL link 
